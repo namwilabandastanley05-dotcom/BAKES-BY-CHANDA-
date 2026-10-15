@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to order | Bakes by Chanda</title>
+<meta name="description" content="How to order custom cakes and cupcakes: what to send, lead times, deposit, delivery and collection.">
+<meta name="theme-color" content="#dbac8f">
+<meta property="og:title" content="How to order | Bakes by Chanda">
+<meta property="og:description" content="How to order custom cakes and cupcakes: what to send, lead times, deposit, delivery and collection.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/cake-pink-rosettes.jpg">
+<link rel="icon" type="image/png" href="images/logo-bag.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Bakes by Chanda, home">
+      <img src="images/logo-bag.png" alt="">
+      <span class="brand-name">Bakes by Chanda</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="order.html" aria-current="page">How to order</a>
+      <a class="btn btn-primary" href="order.html#order-form">Order now</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-banner">
+  <div class="wrap">
+    <h1>How to order</h1>
+    <p>Fill in the form and it opens a ready-written message on WhatsApp or email. Add a photo of your cake idea once the chat opens.</p>
+  </div>
+</section>
+
+<section class="wrap" style="padding-bottom:clamp(3rem,6vw,5rem)">
+  <div class="order-grid">
+
+    <div class="card">
+      <h2>Your order details</h2>
+      <form id="order-form" novalidate>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="event">Event type</label>
+            <select id="event" name="event">
+              <option>Birthday</option>
+              <option>Wedding</option>
+              <option>Bridal shower</option>
+              <option>Gender reveal</option>
+              <option>Anniversary</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="product">What are you ordering?</label>
+            <select id="product" name="product">
+              <option value="standard">Standard cake</option>
+              <option value="bento">Bento (mini) cake</option>
+              <option value="cupcakes">Cupcakes (by the dozen)</option>
+              <option value="custom">Custom cake</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="flavour">Flavour</label>
+            <select id="flavour" name="flavour"></select>
+          </div>
+          <div class="field">
+            <label for="date">Date needed</label>
+            <input id="date" name="date" type="date" required>
+          </div>
+        </div>
+        <div id="notice" class="notice" role="status" hidden></div>
+        <div class="field">
+          <label for="handover">Collection or delivery</label>
+          <select id="handover" name="handover">
+            <option>Pick-up</option>
+            <option>Delivery (fee charged)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="description">Describe your cake <span class="hint">(theme, colours, message, number of guests)</span></label>
+          <textarea id="description" name="description"></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-wa" type="submit" name="via" value="whatsapp">Send on WhatsApp</button>
+          <button class="btn btn-ghost" type="submit" name="via" value="email">Send by email</button>
+        </div>
+        <p class="form-foot">Nothing is sent until you press send in WhatsApp or your email app. Attach your reference photo there.</p>
+      </form>
+    </div>
+
+    <div>
+      <div class="card tan">
+        <h3>Ts and Cs</h3>
+        <ul class="tc-list">
+          <li>Standard orders need to be placed 3 days prior to collection date.</li>
+          <li>Custom orders need to be placed 7 days prior to collection date.</li>
+          <li>A 50% non-refundable deposit is required to secure your order.</li>
+          <li>A delivery fee is charged. Pick-up is available.</li>
+          <li>An additional charge applies to express orders (24 hours prior to the event).</li>
+        </ul>
+        <h3>Prefer to message us?</h3>
+        <ul class="contact-list">
+          <li>WhatsApp: <a href="https://wa.me/260760083694">+260 760 083 694</a></li>
+          <li>Email: <a href="mailto:bakesbychanda@gmail.com">bakesbychanda@gmail.com</a></li>
+        </ul>
+        <p style="margin:1rem 0 0">Include the event type, a description, a photo of your cake idea or theme, the flavour and the date needed.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="images/logo-bag-white.png" alt="">
+          <span class="brand-name">Bakes by Chanda</span>
+        </div>
+        <p style="margin-top:1rem;max-width:22rem">Custom cakes, bento cakes and cupcakes, made to order.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="menu.html">Menu and prices</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="order.html">How to order</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Get in touch</h3>
+        <ul>
+          <li><a href="https://wa.me/260760083694">WhatsApp +260 760 083 694</a></li>
+          <li><a href="mailto:bakesbychanda@gmail.com">bakesbychanda@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/bakes_by_chanda/" rel="noopener">Instagram @bakes_by_chanda</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">&copy; <span data-year>2026</span> Bakes by Chanda. All rights reserved.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

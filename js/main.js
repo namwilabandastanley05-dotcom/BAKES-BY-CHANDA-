@@ -2,7 +2,7 @@
 
 /* >>> Business contact details live here. Change once, used by the order form. <<< */
 const CONTACT = {
-  whatsapp: "260760083694",              // country code + number, no "+" or spaces
+  whatsapp: "27818689118",              // country code + number, no "+" or spaces
   email: "bakesbychanda@gmail.com",
 };
 
@@ -214,3 +214,30 @@ const CONTACT = {
 
 /* ---------- Footer year ---------- */
 document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
+
+/* ---------- Floating "Ask Chanda" inquire button (opens WhatsApp) ---------- */
+(function () {
+  const msg = encodeURIComponent("Hi Bakes by Chanda! \uD83E\uDDC1 I have a question:");
+  const a = document.createElement("a");
+  a.className = "inquire";
+  a.href = "https://wa.me/" + CONTACT.whatsapp + "?text=" + msg;
+  a.target = "_blank";
+  a.rel = "noopener";
+  a.setAttribute("aria-label", "Ask a question on WhatsApp (opens in a new tab)");
+  a.innerHTML =
+    '<span class="inquire-bubble" aria-hidden="true">Ask me anything \u2661</span>' +
+    '<span class="inquire-icon" aria-hidden="true">' +
+      '<svg viewBox="0 0 48 48" width="34" height="34" focusable="false">' +
+        '<path d="M13 28h22l-2.6 13.2a2 2 0 0 1-2 1.6H17.6a2 2 0 0 1-2-1.6z" fill="#e8cd8f" stroke="#b8924a" stroke-width="1.5" stroke-linejoin="round"/>' +
+        '<path d="M18 29l1.2 13M24 29v13.5M30 29l-1.2 13" stroke="#b8924a" stroke-width="1.2" stroke-linecap="round"/>' +
+        '<path d="M10 28.5c0-4.4 3.6-7 8-7 .6-3.8 3.4-6.2 6-6.2s5.4 2.4 6 6.2c4.4 0 8 2.6 8 7z" fill="#f7b5c8" stroke="#c23b66" stroke-width="1.5" stroke-linejoin="round"/>' +
+        '<circle cx="24" cy="11" r="2.6" fill="#c23b66"/>' +
+        '<path d="M24 8.4c.2-2 1.2-3.2 3-3.8" stroke="#85621f" stroke-width="1.2" fill="none" stroke-linecap="round"/>' +
+      '</svg>' +
+    '</span>' +
+    '<span class="inquire-text"><small>Got a question?</small><strong>Ask Chanda</strong></span>';
+  document.body.appendChild(a);
+  // Peek the little speech bubble a few seconds after the page loads
+  setTimeout(() => a.classList.add("show-bubble"), 2500);
+  setTimeout(() => a.classList.remove("show-bubble"), 9000);
+})();

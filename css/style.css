@@ -386,3 +386,71 @@ dialog.lightbox::backdrop { background: rgba(46, 29, 20, .88); }
   .slide { transition: none; }
   * { transition-duration: .01ms !important; }
 }
+
+/* ---------- Floating inquire button ("Ask Chanda") ---------- */
+.inquire {
+  position: fixed; z-index: 60; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: flex; align-items: center; gap: .75rem;
+  padding: .45rem 1.3rem .45rem .45rem; border-radius: 999px;
+  background: linear-gradient(135deg, #e2527f, #c23b66 60%, #a52f56);
+  color: #fff; text-decoration: none; font-family: var(--font-body);
+  border: 2px solid var(--gold-light);
+  box-shadow: 0 10px 24px rgba(194, 59, 102, .4), 0 0 0 5px rgba(247, 181, 200, .45);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.inquire::before {            /* soft pulsing ring */
+  content: ""; position: absolute; inset: -2px; border-radius: inherit;
+  border: 2px solid var(--pink); pointer-events: none;
+  animation: inquire-ring 2.8s ease-out infinite;
+}
+.inquire:hover, .inquire:focus-visible {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 16px 30px rgba(194, 59, 102, .5), 0 0 0 7px rgba(247, 181, 200, .55);
+}
+.inquire:focus-visible { outline: 3px solid var(--cocoa); outline-offset: 4px; }
+.inquire-icon {
+  position: relative; flex: none; width: 52px; height: 52px; border-radius: 50%;
+  background: #fff8f2; display: grid; place-items: center;
+  transform-origin: 50% 85%; animation: inquire-wiggle 5s ease-in-out infinite;
+}
+.inquire-icon::after {        /* little gold sparkle */
+  content: "\2726"; position: absolute; top: -7px; right: -5px; font-size: 18px; line-height: 1;
+  color: var(--gold-light); text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+  animation: inquire-twinkle 2.4s ease-in-out infinite;
+}
+.inquire-text { display: flex; flex-direction: column; line-height: 1.15; }
+.inquire-text small { font-size: .62rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; opacity: .92; }
+.inquire-text strong { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; letter-spacing: .01em; }
+.inquire-bubble {
+  position: absolute; right: 8px; bottom: calc(100% + 16px); white-space: nowrap; pointer-events: none;
+  background: #fff; color: var(--cocoa); border: 2px solid var(--pink);
+  padding: .45rem .95rem; border-radius: 16px 16px 4px 16px;
+  font-family: var(--font-accent); font-style: italic; font-weight: 600; font-size: 1.2rem;
+  box-shadow: 0 8px 18px rgba(46, 26, 16, .15);
+  opacity: 0; transform: translateY(8px) scale(.92); transform-origin: 90% 100%;
+  transition: opacity .3s ease, transform .3s ease;
+}
+.inquire.show-bubble .inquire-bubble,
+.inquire:hover .inquire-bubble,
+.inquire:focus-visible .inquire-bubble { opacity: 1; transform: none; }
+
+@keyframes inquire-wiggle {
+  0%, 86%, 100% { transform: rotate(0); }
+  89% { transform: rotate(-12deg); } 92% { transform: rotate(10deg); }
+  95% { transform: rotate(-6deg); } 98% { transform: rotate(3deg); }
+}
+@keyframes inquire-ring { 0% { transform: scale(1); opacity: .8; } 70%, 100% { transform: scale(1.14, 1.5); opacity: 0; } }
+@keyframes inquire-twinkle { 0%, 100% { transform: scale(1) rotate(0); opacity: 1; } 50% { transform: scale(.65) rotate(25deg); opacity: .6; } }
+
+@media (max-width: 520px) {
+  .inquire { right: 12px; padding-right: 1.05rem; }
+  .inquire-icon { width: 46px; height: 46px; }
+  .inquire-icon svg { width: 30px; height: 30px; }
+  .inquire-text small { display: none; }
+  .inquire-text strong { font-size: 1.1rem; }
+}
+@media (max-width: 760px) { .site-footer { padding-bottom: 5.5rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .inquire::before, .inquire-icon, .inquire-icon::after { animation: none !important; }
+}
+@media print { .inquire { display: none; } }
